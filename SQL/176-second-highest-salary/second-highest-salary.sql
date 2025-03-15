@@ -15,14 +15,14 @@
 -- WHERE RANK_desc = 2;
 
 -- Approach 3: Using Order By value
--- SELECT IFNULL((SELECT DISTINCT Salary
--- FROM Employee
--- ORDER BY Salary DESC
--- LIMIT 1,1), NULL) AS SecondHighestSalary;
+SELECT IFNULL((SELECT DISTINCT Salary
+FROM Employee
+ORDER BY Salary DESC
+LIMIT 1,1), NULL) AS SecondHighestSalary;
 
 -- Approach 4:
-SELECT MAX(a.Salary) AS SecondHighestSalary
-FROM Employee a
-JOIN Employee b
-ON a.Salary < b.Salary;
+-- SELECT MAX(a.Salary) AS SecondHighestSalary
+-- FROM Employee a
+-- JOIN Employee b
+-- ON a.Salary < b.Salary;
 
